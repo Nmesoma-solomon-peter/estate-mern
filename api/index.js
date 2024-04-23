@@ -16,6 +16,17 @@ app.use(express.json());
 app.use('/api/user',route);
 app.use('/api/signup',router)
 
+//middleware
+app.use((err, req, res, next)=>{
+    const statusCode = err.statusCode || 500;
+    const message = err.message || 'Internal server error'
+    return res.status(statusCode).json({
+        successful: false,
+        statusCode,
+        message
+    })
+});
+
 app.listen(4000,()=>{
     console.log("server is listening on port 4000");
 })
