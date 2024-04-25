@@ -14,7 +14,7 @@ mongoose.connect(process.env.MONGO).then(()=>{
 const app = express();
 app.use(express.json());
 app.use('/api/user',route);
-app.use('/api/signup',router)
+app.use('/api/auth',router)
 
 //middleware
 app.use((err, req, res, next)=>{

@@ -21,7 +21,7 @@ export default function SignUp() {
     try {
       setLoading(true);
       e.preventDefault();
-      const res = await fetch("/api/signup/signup", {
+      const res = await fetch("/api/auth/signup", {
         method: "POST",
         headers: {
           'content-Type': 'application/json',
