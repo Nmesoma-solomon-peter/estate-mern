@@ -8,7 +8,8 @@ dotenv.config()
 mongoose.connect(process.env.MONGO).then(()=>{
     console.log("db connected succefully....");
 }).catch((err)=>{
-    console.log(err);
+    // console.log(err);
+    console.log("not connected");
 })
 
 const app = express();
@@ -27,6 +28,6 @@ app.use((err, req, res, next)=>{
     })
 });
 
-app.listen(4000,()=>{
-    console.log("server is listening on port 4000");
+app.listen(3000,()=>{
+    console.log("server is listening on port 3000");
 })
